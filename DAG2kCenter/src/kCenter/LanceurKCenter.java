@@ -24,10 +24,11 @@ public class LanceurKCenter {
 		this.particule = new ParticuleKCenter (graphe,nbReplique) ;
 		kcentre.lancer(particule );
 		long endTime = System.nanoTime();
-
+/*
 		for (EtatKCenter etat : particule.etats) {
 			System.out.println("Energie de l'état : " + etat.valeurEp);
 		}
+		*/
 		System.out.println("duree = " + (endTime - startTime) / 1000000000
 				+ " s");
 	}
