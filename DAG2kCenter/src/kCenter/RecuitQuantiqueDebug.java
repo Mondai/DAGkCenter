@@ -86,7 +86,7 @@ public class RecuitQuantiqueDebug {
 				for (int j = 0; j < this.nbParPalier; j++) {
 					System.out.println("            boucle palier " + j);
 				
-					particule.getMutation(particule.k, nombreRepliques, etat);
+					particule.getMutation(particule.k, particule.n, etat);
 					mutationsTentees++;
 
 					Ep = etat.valeurEp;

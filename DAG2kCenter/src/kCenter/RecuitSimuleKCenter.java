@@ -52,10 +52,11 @@ public class RecuitSimuleKCenter {
 
 			for (EtatKCenter replique : particule.etats) {
 
-				particule.getMutation(particule.k, nombreReplique, replique);
+				particule.getMutation(particule.k, particule.n, replique);
 				mutationsTentees++;
 
 				Ep = replique.valeurEp;
+				System.out.println(replique.positionCentres);
 				replique.effectuerMutation(particule.mutation);
 				System.out.println(replique.positionCentres);
 				replique.calculerEp(particule.graphe);
