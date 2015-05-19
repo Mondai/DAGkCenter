@@ -34,7 +34,7 @@ public class TestDebug {
 		System.out.println("Ep non itit "+etat.valeurEp  );
 		
 		
-		MutationKCenter mutation = new MutationKCenter(etat.positionCentres.first(), 0) ;
+		MutationKCenter mutation = new MutationKCenter(etat.positionCentres.get(0), 0) ;
 		
 		etat.calculerEp(graphe) ;
 		System.out.println("Ep "+etat.valeurEp );

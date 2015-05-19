@@ -34,8 +34,9 @@ public class ParticuleKCenter {
 	}
 
 	public void getMutation(int k, int n, EtatKCenter etat) {
-		this.mutation.avant = random.nextInt(k);
-		int mut = random.nextInt(n);
+		
+		this.mutation.avant = etat.positionCentres.get(random.nextInt(k)) ;
+		Integer  mut = random.nextInt(n);
 		while (etat.positionCentres.contains(mut)) {
 			mut = random.nextInt(n);
 		}

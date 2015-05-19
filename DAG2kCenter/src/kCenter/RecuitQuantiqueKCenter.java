@@ -90,9 +90,9 @@ public class RecuitQuantiqueKCenter {
 
 					Ep = etat.valeurEp;
 					Ec = particule.calculerEc(etat, next);
-
+					System.out.println(etat.positionCentres);
 					particule.etats[p].effectuerMutation(particule.mutation);
-
+					System.out.println(etat.positionCentres);
 					etat.calculerEp(particule.graphe);
 					EpActuelle = etat.valeurEp;
 					deltaEp = EpActuelle - Ep;

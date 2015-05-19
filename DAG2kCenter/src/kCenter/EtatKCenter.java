@@ -1,16 +1,16 @@
 package kCenter;
 
-import java.util.TreeSet;
+import java.util.ArrayList;
 
 public class EtatKCenter {
 
-	TreeSet<Integer> positionCentres;
+	ArrayList<Integer> positionCentres;
 	int k;
 	double valeurEp;
 
 	public EtatKCenter( int k) {
 		this.k = k;
-		this.positionCentres= new TreeSet<Integer>();
+		this.positionCentres= new ArrayList<Integer>() ;
 		this.valeurEp = 0 ; 
 	}
 	
@@ -39,12 +39,12 @@ public class EtatKCenter {
 	}
 
 	public void effectuerMutation(MutationKCenter mutation) {
-		positionCentres.remove(mutation.avant);
+		positionCentres.remove((Object)mutation.avant);
 		positionCentres.add(mutation.apres);
 	}
 
 	public void annulerMutation(MutationKCenter mutation) {
-		positionCentres.remove(mutation.apres);
+		positionCentres.remove((Object)mutation.apres);
 		positionCentres.add(mutation.avant);
 	}
 

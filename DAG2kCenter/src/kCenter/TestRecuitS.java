@@ -12,7 +12,7 @@ public class TestRecuitS {
 		
 		String lien = "data/pmed1.txt";
 		int nbIter = 3 ;
-		int nbRepl = 3  ;
+		int nbRepl = 2  ;
 		graphe = Traducteur.traduireOrlibPMED(lien) ;
 
 		particule = new ParticuleKCenter(graphe, nbRepl) ;

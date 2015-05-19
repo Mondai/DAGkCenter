@@ -24,9 +24,9 @@ public class RecuitSimuleKCenter {
 		mutationsTentees = 0;
 		mutationsAcceptees = 0;
 
-		double Ep = 0;
-		double EpActuelle = 0;
-		double deltaE = 0;
+		double Ep ;
+		double EpActuelle ;
+		double deltaE ;
 
 		int nombreReplique = particule.nombreReplique;
 
@@ -57,6 +57,7 @@ public class RecuitSimuleKCenter {
 
 				Ep = replique.valeurEp;
 				replique.effectuerMutation(particule.mutation);
+				System.out.println(replique.positionCentres);
 				replique.calculerEp(particule.graphe);
 				EpActuelle = replique.valeurEp;
 				deltaE = EpActuelle - Ep;
