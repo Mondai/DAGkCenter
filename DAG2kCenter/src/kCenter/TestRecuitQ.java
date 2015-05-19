@@ -8,7 +8,7 @@ public class TestRecuitQ {
 
 		LanceurKCenter launcher ;
 		
-		for (int i = 1 ; i < 6 ; i++) {
+		for (int i = 1 ; i < 41 ; i++) {
 		launcher = new LanceurKCenter();
 
 		// Paramètres kCenter
@@ -16,11 +16,11 @@ public class TestRecuitQ {
 		launcher.graphe=Traducteur.traduireOrlibPMED(launcher.nomGraphe);
 		
 		// Paramètres du recuit
-		launcher.setnbMaxIteration(4 * launcher.graphe.k * launcher.graphe.n);
+		launcher.setnbMaxIteration(/*4 * launcher.graphe.k * */launcher.graphe.n);
 		launcher.setG0(0.75);
-		launcher.setNbPalier(5);
+		launcher.setNbPalier(1);
 		launcher.setT(1);
-		launcher.setNbReplique(10);
+		launcher.setNbReplique(1);
 
 		// Paramètres graphiques
 		
