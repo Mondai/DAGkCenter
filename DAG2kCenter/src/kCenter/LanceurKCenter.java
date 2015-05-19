@@ -12,7 +12,7 @@ public class LanceurKCenter {
 	double T;
 	int nbReplique ;
 	ParticuleKCenter particule ;
-
+	Graphe graphe ;
 	public LanceurKCenter() {
 	}
 
@@ -21,7 +21,7 @@ public class LanceurKCenter {
 	public void lancer() throws IOException {
 		long startTime = System.nanoTime();	
 		RecuitQuantiqueKCenter kcentre = new RecuitQuantiqueKCenter( new FonctionLineaire(G0, 0, nbMaxIteration), T, nbMaxIteration, nbPalier ) ;
-		this.particule = new ParticuleKCenter (Traducteur.traduireOrlibPMED(nomGraphe),nbReplique) ;
+		this.particule = new ParticuleKCenter (graphe,nbReplique) ;
 		kcentre.lancer(particule );
 		long endTime = System.nanoTime();
 

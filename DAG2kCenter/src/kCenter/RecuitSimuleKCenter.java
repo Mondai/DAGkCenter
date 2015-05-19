@@ -20,7 +20,7 @@ public class RecuitSimuleKCenter {
 
 	public void lancer(ParticuleKCenter particule) {
 
-		int c = 0;
+		
 		mutationsTentees = 0;
 		mutationsAcceptees = 0;
 
@@ -47,8 +47,7 @@ public class RecuitSimuleKCenter {
 
 		while (temperature.modifierT()) {
 
-			System.out.println("boucle temperature " + c);
-			c++;
+
 
 			for (EtatKCenter replique : particule.etats) {
 

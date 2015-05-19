@@ -23,7 +23,6 @@ public class RecuitQuantiqueKCenter {
 
 	public void lancer(ParticuleKCenter particule) {
 
-		int c = 0;
 		mutationsTentees = 0;
 		mutationsAcceptees = 0;
 
@@ -38,10 +37,9 @@ public class RecuitQuantiqueKCenter {
 
 		int nombreRepliques = particule.nombreReplique;
 
-		System.out.println("cacul des energies des etats ramdom");
+
 		for (int i = 0; i < nombreRepliques; i++) {
 			double energie = particule.etats[i].calculerEp(particule.graphe);
-			System.out.println(particule.etats[i].valeurEp );
 			if (energie < this.meilleureEnergie) {
 				this.meilleureEnergie = energie;
 			}
@@ -61,8 +59,7 @@ public class RecuitQuantiqueKCenter {
 
 		while (Gamma.modifierT()) {
 
-			System.out.println("boucle temperature " + c);
-			c++;
+		
 
 			// Collections.shuffle(indiceEtats, particulee.gen); // melanger
 			// l'ordre de parcours des indices
@@ -73,7 +70,6 @@ public class RecuitQuantiqueKCenter {
 			// nombreEtapeParnombreEtapeParPalier
 
 			for (int p = 0 ; p < particule.nombreReplique ; p++) {
-				System.out.println("     boulce etat " + p);
 
 				etat = particule.etats[p];
 				if (p == nombreRepliques - 1) {
@@ -83,50 +79,48 @@ public class RecuitQuantiqueKCenter {
 				}
 
 				for (int j = 0; j < this.nbParPalier; j++) {
-					System.out.println("            boucle palier " + j);
+
 				
 					particule.getMutation(particule.k, particule.n, etat);
 					mutationsTentees++;
 
 					Ep = etat.valeurEp;
 					Ec = particule.calculerEc(etat, next);
-					System.out.println(etat.positionCentres);
+
 					particule.etats[p].effectuerMutation(particule.mutation);
-					System.out.println(etat.positionCentres);
+
 					etat.calculerEp(particule.graphe);
 					EpActuelle = etat.valeurEp;
 					deltaEp = EpActuelle - Ep;
 					EcActuelle = particule.calculerEc(etat, next);
 					deltaEc = EcActuelle - Ec;
 					deltaE = deltaEp / nombreRepliques - deltaEc * Jr;
-					
-					System.out.println("              "+Ep+" "+EpActuelle+" "+deltaEp+"   "+Ec+" "+EcActuelle+" "+deltaEc+"   "+deltaE);
 
 					if (deltaEp < 0) {
 						mutationsAcceptees++;
-						System.out.println("                  deltaEp < 0 ");
+
 						if (EpActuelle < this.meilleureEnergie) {
 							this.meilleureEnergie = EpActuelle;
 						}
 					} else if (deltaE < 0) {
 						mutationsAcceptees++;
-						System.out.println("                  deltaE < 0 ");
+
 					} else {
 						proba = Expo.expf(-deltaE / this.temperature);
 						probaAcceptation = Math.random();
 						if (proba >= probaAcceptation) {
 							mutationsAcceptees++;
-							System.out
-									.println("                  deltaE > 0  acecepée");
+
 						} else {
 							etat.annulerMutation(particule.mutation);
 							etat.valeurEp = Ep;
-							System.out
-									.println("                  deltaE > 0  refusée");
+
 						}
 					}
 				}
 			}
 		}
+		
+		System.out.println(this.meilleureEnergie) ;
 	}
 }

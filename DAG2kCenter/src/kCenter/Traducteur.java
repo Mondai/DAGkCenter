@@ -27,8 +27,6 @@ public class Traducteur {
 			graphe.data[i]= new Vertex (i) ;
 		}
 		
-		System.out.println("Vertex[] créé !");
-		
 		while ( (line = reader.readLine()) != null) {
 
 			temp = line.split("\\s");
@@ -39,8 +37,7 @@ public class Traducteur {
 			graphe.data[v2].adjacencies.add(new Edge(graphe.data[v1],d)) ;
 
 		}
-		
-		System.out.println("Edges créés !");
+
 		
 		reader.close() ;
 		
