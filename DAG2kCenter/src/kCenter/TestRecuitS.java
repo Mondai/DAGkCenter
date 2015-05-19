@@ -11,7 +11,7 @@ public class TestRecuitS {
 	public static void main(String[] args) throws IOException {
 		
 		String lien = "data/pmed1.txt";
-		int nbIter = 100 ;
+		int nbIter = 3 ;
 		int nbRepl = 3  ;
 		graphe = Traducteur.traduireOrlibPMED(lien) ;
 

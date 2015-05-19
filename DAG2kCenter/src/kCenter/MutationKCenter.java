@@ -11,5 +11,11 @@ public class MutationKCenter {
 		this.apres=0;
 		
 	}
+	
+	MutationKCenter (int avant, int apres) {
+		this.avant=avant;
+		this.apres=apres;
+		
+	}
 
 }

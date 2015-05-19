@@ -75,5 +75,7 @@ public class RecuitSimuleKCenter {
 				}
 			}
 		}
+		
+		System.out.println(mutationsTentees+"/"+mutationsAcceptees) ;
 	}
 }
