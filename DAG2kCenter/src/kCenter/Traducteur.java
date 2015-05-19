@@ -43,6 +43,8 @@ public class Traducteur {
 		System.out.println("Edges créés !");
 		
 		reader.close() ;
+		
+		AlgoDijkstra.computeAllPaths(graphe.data, graphe.distances);
 		return graphe ;
 	}
 

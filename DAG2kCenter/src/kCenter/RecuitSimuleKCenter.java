@@ -56,15 +56,13 @@ public class RecuitSimuleKCenter {
 				mutationsTentees++;
 
 				Ep = replique.valeurEp;
-				System.out.println(replique.positionCentres);
+				System.out.println ("ep "+replique.valeurEp);
 				replique.effectuerMutation(particule.mutation);
-				System.out.println(replique.positionCentres);
 				replique.calculerEp(particule.graphe);
 				EpActuelle = replique.valeurEp;
+				System.out.println ("ep actuelle "+replique.valeurEp);
 				deltaE = EpActuelle - Ep;
 
-				System.out.println("       " + Ep + " " + EpActuelle + "   "
-						+ deltaE);
 
 				if (Expo.expf(-deltaE / this.temperature.t) > Math.random()) {
 
@@ -78,6 +76,6 @@ public class RecuitSimuleKCenter {
 			}
 		}
 		
-		System.out.println(mutationsTentees+"/"+mutationsAcceptees) ;
+		System.out.println(+mutationsAcceptees+"/"+mutationsTentees) ;
 	}
 }

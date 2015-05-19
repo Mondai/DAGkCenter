@@ -11,8 +11,8 @@ public class TestRecuitS {
 	public static void main(String[] args) throws IOException {
 		
 		String lien = "data/pmed1.txt";
-		int nbIter = 3 ;
-		int nbRepl = 2  ;
+		int nbIter = 10000 ;
+		int nbRepl = 1  ;
 		graphe = Traducteur.traduireOrlibPMED(lien) ;
 
 		particule = new ParticuleKCenter(graphe, nbRepl) ;
