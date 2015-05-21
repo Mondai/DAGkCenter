@@ -16,7 +16,7 @@ public class TestRecuitQ {
 		launcher.graphe=Traducteur.traduireOrlibPMED(launcher.nomGraphe);
 		
 		// Paramètres du recuit
-		launcher.setnbMaxIteration(/*4 * launcher.graphe.k * */launcher.graphe.n);
+		launcher.setnbMaxIteration(4 * launcher.graphe.k* launcher.graphe.n);
 		launcher.setG0(0.75);
 		launcher.setNbPalier(1);
 		launcher.setT(1);
